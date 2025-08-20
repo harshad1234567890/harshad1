@@ -1,0 +1,66 @@
+
+
+//1.Create a table called Employees with the following columns:
+EmployeeID (INTEGER, Primary Key)
+
+FirstName (VARCHAR(50))
+
+LastName (VARCHAR(50))
+
+Salary (DECIMAL(10,2))  //
+desc Employee;
+
+Query:
+
+
+ create database Employee_DataEmployee_Management_System;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> use Employee_DataEmployee_Management_System;
+Database changed
+
+mysql> desc Employees;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| EmployeeID | int           | NO   | PRI | NULL    |       |
+| FirstName  | varchar(50)   | YES  |     | NULL    |       |
+| LastaName  | varchar(50)   | YES  |     | NULL    |       |
+| Salary     | decimal(10,2) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+4 rows in set (0.04 sec)
+
+
+//2.Insert  5 employees records.
+
+
+Query:
+
+mysql> insert into Employees values(1, 'Akash', 'Gawand', 50000.00),(2, 'Rajshri', 'Thate', 65000.00),(3, 'Priya', 'Vipul', 55000.00),(4, 'Emily', 'Brown', 72000.00),(5, 'David', 'Wilson', 48000.00);
+Query OK, 5 rows affected (0.04 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+
+
+//3.Alter the table to include a new column.:Add a new column Departments (VARCHAR(50)) to the table.
+
+Query:
+
+
+mysql> alter table Employees add column Department varchar(50);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+//4.Get the names and department of employees who earn more than 55000.
+
+mysql> select * from employees where salary>55000;
++------------+-----------+-----------+----------+------------+
+| EmployeeID | FirstName | LastaName | Salary   | Department |
++------------+-----------+-----------+----------+------------+
+|          2 | Rajshri   | Thate     | 65000.00 | NULL       |
+|          4 | Emily     | Brown     | 72000.00 | NULL       |
++------------+-----------+-----------+----------+------------+
+2 rows in set (0.01 sec)
